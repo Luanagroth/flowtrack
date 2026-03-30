@@ -189,6 +189,4 @@ Esse case demonstra outra frente de expertise: arquitetura de extensão, seguran
 
 ---
 
-> Se quiser, posso aplicar ícones de badge de pipeline, status de testes e deploy automático no topo do README para destacar no portfólio.
-
 
