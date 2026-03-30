@@ -137,7 +137,8 @@ npm run build
 
 ## 📦 Deploy (placeholder)
 
-- Produção: `https://flowtrack.vercel.app` (substituir pelo link real após deploy)
+- Produção: https://flowtrack-seven.vercel.app
+- Implantação: flowtrack-c05h5fx2r-luanas-projects-b69a8269.vercel.app
 
 ---
 
