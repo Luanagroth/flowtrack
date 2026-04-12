@@ -5,12 +5,14 @@ export interface Task {
   title: string;
   completed: boolean;
   createdAt: string;
+  note?: string;
 }
 
 export interface Habit {
   id: string;
   name: string;
   completed: boolean;
+  note?: string;
 }
 
 export interface WeeklyGoal {
@@ -18,4 +20,5 @@ export interface WeeklyGoal {
   title: string;
   target: number;
   progress: number;
+  note?: string;
 }

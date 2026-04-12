@@ -29,16 +29,16 @@ export default function Home() {
 
         <SummaryCards tasksCompleted={tasksCompleted} focusHours={Math.round(totalFocusHours * 10) / 10} dailyGoal={dailyTarget} />
 
-        <div className="grid gap-4 xl:grid-cols-2">
-          <TaskSection tasks={tasks} setTasks={setTasks} />
-          <HabitSection habits={habits} setHabits={setHabits} />
-        </div>
-
-        <div className="grid gap-4 xl:grid-cols-3">
+        <div className="grid gap-4 xl:grid-cols-[1.05fr_1.25fr]">
           <CurrentTimeCard />
           <PomodoroTimer />
-          <WeeklyGoalsSection goals={goals} setGoals={setGoals} />
         </div>
+
+        <HabitSection habits={habits} setHabits={setHabits} />
+
+        <TaskSection tasks={tasks} setTasks={setTasks} />
+
+        <WeeklyGoalsSection goals={goals} setGoals={setGoals} />
       </div>
     </main>
   );

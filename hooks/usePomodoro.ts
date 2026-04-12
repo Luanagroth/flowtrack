@@ -5,7 +5,6 @@ import { PomodoroMode } from "@/types";
 
 const FOCUS_SECONDS = 25 * 60;
 const SHORT_BREAK_SECONDS = 5 * 60;
-const LONG_BREAK_SECONDS = 15 * 60;
 
 interface PomodoroState {
   mode: PomodoroMode;
@@ -88,13 +87,8 @@ export function usePomodoro() {
 
     if (state.mode === "focus") {
       nextCycles += 1;
-      if (nextCycles > 0 && nextCycles % 4 === 0) {
-        nextMode = "longBreak";
-        nextSeconds = LONG_BREAK_SECONDS;
-      } else {
-        nextMode = "shortBreak";
-        nextSeconds = SHORT_BREAK_SECONDS;
-      }
+      nextMode = "shortBreak";
+      nextSeconds = SHORT_BREAK_SECONDS;
     } else {
       nextMode = "focus";
       nextSeconds = FOCUS_SECONDS;

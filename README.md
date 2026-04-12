@@ -1,131 +1,118 @@
-# FlowTrack 🚀
+# FlowTrack
 
 [![CI](https://github.com/Luanagroth/flowtrack/actions/workflows/main.yml/badge.svg)](https://github.com/Luanagroth/flowtrack/actions/workflows/main.yml)
-[![Vercel](https://vercel.com/button)](https://vercel.com/new)
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen)](https://github.com/Luanagroth/flowtrack/actions/workflows/main.yml)
+[![Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-FlowTrack é uma aplicação de produtividade pessoal (SaaS-style) desenhada para resolver um problema real do usuário: foco, ritmo e disciplina em uma rotina de trabalho remoto. Este projeto demonstra full-stack frontend profissional com foco em arquitetura, qualidade, testes e pipeline de entrega contínua.
+FlowTrack é uma aplicação de produtividade pessoal com foco em rotina, organização e constância. O projeto foi construído para centralizar tarefas, hábitos diários, metas da semana, horário local e um ciclo de Pomodoro com persistência local.
 
----
+## Preview
 
-## 🌟 Objetivo do projeto
+### Tela principal reformulada
 
-- Provar domínio em Next.js + TypeScript + Tailwind + testes e CI/CD.
-- Entregar um MVP completo que funciona offline via localStorage e escala para backend no futuro.
-- Criar um case claro para portfólio que uma equipe de recrutamento entenda em 30 segundos.
+![FlowTrack reformulado](public/README/flowtrack%20reformulado.png)
 
----
+### Seções em uso
 
-## ✅ Funcionalidades implementadas
+![FlowTrack em teste](public/README/flowtrack%20em%20teste.png)
 
-- Dashboard principal com interface limpa e responsiva
-- Cards métricos: tarefas feitas, foco acumulado, ritmo diário
-- Gerenciamento de tarefas: criar, concluir, remover, filtrar (all/active/completed)
-- Gestão de hábitos: toggles diários e progresso visual
-- Metas semanais: progresso incremental e feedback visual em barras
-- Pomodoro completo: iniciar, pausar, reset, modos foco/pause curta/pause longa
-- Notificações do navegador (com permissão): ciclo de foco e pausa
-- Relógio em tempo real com atualização cada 1s
-- Persistência local (`localStorage`) para tarefas, hábitos, metas e estado do pomodoro
+## Produção
 
----
+Aplicação publicada em:
 
-## 🧩 Arquitetura e padrões
+[flowtrack-seven.vercel.app](https://flowtrack-seven.vercel.app)
 
-- Componentes funcionais React + hooks customizados
-- Composição limpa (responsável pelo componente e funcionalidade isolada)
-- Tipagem robusta com interfaces para Task, Habit, WeeklyGoal, PomodoroMode
-- Reutilização via hooks:
-  - `useLocalStorage` (sincroniza estado local e localStorage)
-  - `usePomodoro` (lógica de timer + ciclos + notificações + persistência)
-  - `useCurrentTime` (relógio atual)
+Implantação mais recente:
 
----
+`flowtrack-etc3mh6xk-luanas-projects-b69a8269.vercel.app`
 
-## 🛠️ Stack técnica
+## Objetivo do projeto
 
-- Next.js 14+ (App Router)
+- Criar um dashboard de produtividade claro, responsivo e fácil de usar.
+- Demonstrar domínio em Next.js, TypeScript, Tailwind, testes e CI/CD.
+- Entregar um MVP funcional com persistência via `localStorage`.
+- Estruturar uma base pronta para evoluir para backend no futuro.
+
+## Funcionalidades implementadas
+
+- Dashboard principal com identidade visual refinada.
+- Cabeçalho com marca FlowTrack em destaque.
+- Hora local e data em tempo real.
+- Pomodoro com:
+  - início, pausa e reset
+  - ciclo automático `25 min -> 5 min -> 25 min`
+  - som configurável
+  - notificações nativas do navegador
+- Hábitos diários com:
+  - adicionar
+  - editar
+  - remover
+  - marcar como concluído
+  - nota opcional
+- Tarefas com:
+  - adicionar
+  - remover
+  - separar pendentes e concluídas
+  - marcar por bolinha de status
+  - nota opcional
+- Metas da semana com:
+  - adicionar
+  - editar
+  - remover
+  - acompanhar progresso
+  - concluir e reabrir
+  - nota opcional
+- Campos com exemplos visuais para facilitar o preenchimento manual.
+- Persistência local para tarefas, hábitos, metas e Pomodoro.
+
+## Atualizações recentes
+
+- Reorganização completa da ordem visual dos cards.
+- Refinamento do cabeçalho e da hierarquia da interface.
+- Revisão de português e acentuação dos textos do sistema.
+- Placeholders com exemplos claros em hábitos, tarefas e metas.
+- Inclusão de notas opcionais em tarefas, hábitos e metas.
+- Edição inline mais fluida em hábitos.
+- Card de tarefas simplificado, sem mistura entre pendentes e concluídas.
+- Metas da semana expandidas para edição completa.
+- Alerta sonoro e notificações nativas no Pomodoro.
+- Opção de ligar e desligar o som do Pomodoro.
+
+## Stack técnica
+
+- Next.js 16
+- React 19
 - TypeScript
-- Tailwind CSS
-- ESLint
-- Jest + React Testing Library
+- Tailwind CSS 4
+- ESLint 9
+- Jest
+- React Testing Library
 - GitHub Actions
-- Deploy: Vercel
+- Vercel
 
----
+## Arquitetura do projeto
 
-## 📁 Estrutura do repositório
+- `app/`: estrutura principal da aplicação
+- `components/`: componentes de interface e cards do dashboard
+- `hooks/`: hooks reutilizáveis como `useLocalStorage`, `usePomodoro` e `useCurrentTime`
+- `lib/`: dados iniciais e utilidades
+- `types/`: tipos do domínio
+- `public/`: assets estáticos e imagens do README
+- `__tests__/`: testes de fluxo principal
 
-- `app/` (página principal)
-- `components/` (UI + feature modules)
-- `hooks/` (lógica reaproveitável)
-- `lib/data.ts` (dados fake seeds)
-- `types/index.ts` (tipos do domínio)
-- `__tests__/App.test.tsx` (cobertura de fluxo crítico)
-- `.github/workflows/main.yml` (CI/CD completa)
+## Qualidade e testes
 
----
+O projeto possui testes cobrindo os fluxos principais:
 
-## 🧪 Qualidade e testes
+- renderização do dashboard
+- criação e conclusão de tarefas
+- notas em tarefas
+- criação, edição e conclusão de hábitos
+- notas em hábitos
+- edição, conclusão e notas em metas
+- renderização do Pomodoro
 
-- Todos os testes unitários e integrados foram implementados em `__tests__/App.test.tsx`.
-- Cobertura chave:
-  - renderização do dashboard
-  - adicionar tarefa
-  - marcar tarefa completa
-  - filtro de tarefas
-  - interação de hábitos
-  - fluxo do timer do pomodoro
-- Comando de execução local:
-
-```bash
-npm run test
-```
-
----
-
-## ⚙️ CI/CD em GitHub Actions
-
-Arquivo: `.github/workflows/main.yml`
-
-### Job `ci`
-- roda em `push` e `pull_request` na `main`
-- `actions/checkout@v4`
-- `actions/setup-node@v5` (Node 20)
-- `npm ci`
-- `npm run lint`
-- `npm run test -- --runInBand`
-- `npm run build`
-
-### Job `deploy`
-- depende de `ci` (`needs: ci`)
-- só executa em `refs/heads/main`
-- usa `amondnet/vercel-action@v20`
-- parâmetros:
-  - `VERCEL_TOKEN` (secret)
-  - `VERCEL_ORG_ID` (secret)
-  - `VERCEL_PROJECT_ID` (secret)
-  - `vercel-args: --prod`
-
-### Secrets GitHub necessários
-- `VERCEL_TOKEN`
-- `VERCEL_ORG_ID`
-- `VERCEL_PROJECT_ID`
-
----
-
-## ▶️ Rodando local
-
-```bash
-npm install
-npm run dev
-```
-
-Acesse `http://localhost:3000`
-
----
-
-## 🧹 Rodando checks
+Comandos:
 
 ```bash
 npm run lint
@@ -133,60 +120,58 @@ npm run test
 npm run build
 ```
 
----
+## Rodando localmente
 
-## 📦 Deploy (placeholder)
+```bash
+npm install
+npm run dev
+```
 
-- Produção: https://flowtrack-seven.vercel.app
-- Implantação: flowtrack-c05h5fx2r-luanas-projects-b69a8269.vercel.app
+Abra:
 
----
+```bash
+http://localhost:3000
+```
 
-## 🔭 Próximos passos e roadmap
+## CI/CD
 
-- Evoluir backend (Next.js API/Node/Prisma + PostgreSQL)
-- Autenticação (NextAuth/DigitalOcean) e perfil do usuário
-- Histórico analítico (gráficos, heatmap, visão do progresso)
-- E2E com Cypress ou Playwright
-- Mobile PWA offline (cache + service workers)
-- Feature de modo escuro e acessibilidade WCAG 2.1
+O pipeline em `.github/workflows/main.yml` executa:
 
----
+- lint
+- testes
+- build
+- deploy em produção na Vercel
 
-## 💼 Por que este projeto foi excelente para o meu portfolio
+Secrets esperados no GitHub:
 
-- Era um desafio completo de produto: UX, persistência, timers e métricas
-- Valida habilidades comuns exigidas para vagas de mid/senior: arquitetura, testes e entrega contínua
-- Demonstrou habilidade de transformar um requisito em produto usável em tempo curto
-- Permite conversa técnica sobre trade-offs (localStorage vs backend, SSR vs CSR, TDD, CI/CD)
-- Código organizado e escalável, com foco em manutenção e boas práticas
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
 
----
+## Deploy
 
-## � Cases e projetos relacionados
+Deploy em produção via Vercel:
 
-### Palavri-metro (Chrome extension) - visão rápida
+[flowtrack-seven.vercel.app](https://flowtrack-seven.vercel.app)
 
-- Extensão Chrome para análise de frequência de palavras em página inteira ou seleção
-- Detecção automática de idioma (pt/en/es)
-- Persistência local de preferências via `chrome.storage`
-- Análise local no navegador (sem backend)
-- Arquitetura modular: `manifest.json`, `background.js`, `content.js`, `popup.js`, `analyzer.js`
-- Testes unitários no núcleo de análise (`tests/analyzer.test.js`)
-- Funcionalidade: total de palavras, únicas, top termo, ranking, busca por palavra, remoção de stopwords
-- Flow de UI: escolha de modo, idioma, análise, resultado e feedback
+Se quiser publicar manualmente:
 
-Esse case demonstra outra frente de expertise: arquitetura de extensão, segurança de permissões e análise de texto em tempo real.
+```bash
+npx vercel --prod
+```
 
----
+## Roadmap
 
-## 📫 Contato
+- autenticação de usuário
+- histórico e analytics
+- gráficos de progresso
+- PWA offline
+- acessibilidade mais avançada
+- backend com banco de dados
 
-- GitHub: https://github.com/Luanagroth
-- E-mail: luanaeulalia56@gmail.com
-- LinkedIn: https://www.linkedin.com/in/luanagroth
-- Projeto GitHub: https://github.com/Luanagroth/flowtrack
+## Contato
 
----
-
-
+- [GitHub](https://github.com/Luanagroth)
+- [LinkedIn](https://www.linkedin.com/in/luanagroth)
+- [E-mail](mailto:luanaeulalia56@gmail.com)
+- [Repositório do projeto](https://github.com/Luanagroth/flowtrack)
